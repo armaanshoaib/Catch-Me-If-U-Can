@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch Me!</title>
+    <link rel="icon" href="catchFavicon.png" type="image/png">
+    <style>
+        body {
+            background-image: url('catch-me-if-you-can-wallpaper.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+        }
+
+        .container {            
+            backdrop-filter: blur(4px);
+            border-radius: 15px;
+            padding: 20px;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        #info {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        #catchBtn {
+            background-color: green;
+            color: white;
+            padding: 12px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            width: 40%;
+        }
+
+        #catchBtn:hover {
+            background-color: #ff4500;
+        }
+
+        #catchBtn img {
+            margin-left: 10px;
+        }
+        
+        @media (max-width: 600px) {
+            body {
+                background-size: contain;
+                padding: 10px;
+            }
+
+            .container {
+                width: 100%;
+            }
+
+            #catchBtn {
+                font-size: 16px;
+            }
+
+            #info {
+                font-size: 16px;
+            }
+        }
+           
+    </style>
+    <script>
+        
+        function run() {
+            var xCord = Math.floor(Math.random() * 300);
+            var yCord = Math.floor(Math.random() * 300);
+           // document.getElementById('xpos').innerHTML=xCord;
+            //document.getElementById('ypos').innerHTML=yCord;
+            document.getElementById("catchBtn").style.position = 'absolute';
+            document.getElementById("catchBtn").style.left = xCord + 'px';
+            document.getElementById("catchBtn").style.top = yCord + 'px';
+        }
+        function uGotMe(){
+            window.alert("You Got Me!");
+            location.reload();
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <p style="font-size: 24px; font-weight: bold;">CATCH ME IF YOU CAN (2002)</p>
+        <p id="info">Directed by Steven Spielberg, this is a biographical crime film based on the life of Frank Abagnale Jr. The story follows Frank (<span style="font-weight: 700;">Leonardo DiCaprio</span>), a young con artist who successfully impersonates a
+            Pan Am pilot, a doctor, and a legal prosecutor, all before his 19th birthday. His primary skill is check
+            fraud, which he uses to amass millions of dollars.
+
+            The film begins with Frank’s troubled family life, including his parents’ divorce, which prompts him to run
+            away. To survive, he turns to various cons, becoming increasingly bold and sophisticated. His exploits catch
+            the attention of FBI agent Carl Hanratty <span style="font-weight: 700;">(Tom Hanks)</span>, who becomes determined to capture him. Despite Carl’s
+            relentless pursuit, Frank manages to stay one step ahead, reveling in the chase.
+
+            The cat-and-mouse game between Frank and Carl forms the crux of the film, showcasing Frank’s ingenuity and
+            charm, as well as Carl’s dogged determination.
+        </p>
+        <button id="catchBtn" onmouseover="run()" onclick="uGotMe()">
+            Catch Me
+            <img id="raiseHand" src="raising-hand.gif" height="30" width="30">
+        </button>
+        <p style="font-size: 12px; color: black;">*Works better on desktop</p>
+    </div>
+    <!--
+    <div>
+
+    <p id="xpos"></p>
+    <p id="ypos"></p>
+    </div>
+-->
+
+</body>
+
+</html>
